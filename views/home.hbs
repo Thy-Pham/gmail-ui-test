@@ -1,0 +1,16 @@
+<button type="button" class="btn btn-danger">GMAIL</button>
+
+{{#section 'js'}}
+<script>
+    $("button").click(async () => {
+        await $.ajax({
+            url: "http://localhost:3000/api/v1/mail_integrations/gmail?job_id=90d248e7-9f77-4895-881a-53cc6d70aadc&candidate_id=123",
+            type: 'GET',
+            success: async function (response) {
+                console.log(response);
+            }
+        });
+    })
+</script>
+    
+{{/section}}
